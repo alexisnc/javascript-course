@@ -211,6 +211,67 @@ restaurant.orderPizza('mushrooms');
 // const [p = 1, q = 1, r = 1] = [8, 9];
 // console.log(p, q, r);
 
-for (let i = 0; i < 5; i++) {
-  console.log(i);
+
+
+// Use ANy data type, return ANY data type. short-circuiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1); 
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); 
+
+console.log('--------AND-------')
+
+console.log(0 && 'Jonas')
+console.log(7 && 'Jonas')
+
+console.log('Hello' && 23 && null && 'jonas');
+
+
+//Nullish coalescene operator
+restaurant.numGuests = 0;
+const guests = restaurant.numGusets || 10;
+console.log(guests);
+
+//Null operator
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+//Logical Assignment operators 
+
+const rest1 = {
+ name: 'Capri',
+ numGuests: 20,
 }
+
+const rest2 = {
+ name: 'La Piazza', 
+ owner: 'Giovanni Rossi',
+}
+
+//Or Assignment operator
+//rest1.numGusts = rest1.numGuests || 10;
+//rest2.numGuests = rest2.numGuests || 10;
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+
+//nullish assignment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+//AND assignment operator
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>'
+
+console.log(rest1);
+console.log(rest2);
