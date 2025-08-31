@@ -66,7 +66,7 @@ console.log(properties);
 
 let openStr = `We are open on ${properties.length} days: `;
 for (const day of properties) {
-  openStr += `${day},`;
+  console.log(openStr += `${day},`);
 }
 console.log(openStr);
 
@@ -378,6 +378,7 @@ const game = {
  },
  };
 
+//Challenge #1
 //  //1.
 // const [players1, players2] = game.players;
 // console.log(players1, players2);
@@ -409,6 +410,36 @@ const game = {
 
 // //7.
 // team1 < team2 && console.log('Team 1 is more likely to win');
+
+//Challenge #2
+//1.
+const goals = [...game.scored];
+
+for(const [i, el] of goals.entries()){
+  console.log(`Goal ${i +1}: ${el}`);
+}
+
+//2.
+const scores = Object.values(game.odds);
+console.log(scores);
+const whatever = Object.keys(game.odds);
+console.log(whatever.length);
+
+let total = 0
+for(const blah of scores){
+  //let total = 0;
+  total += blah;
+}
+const avg = total/whatever.length; 
+console.log(avg)
+
+//3.
+const tch = Object.entries(game.odds)
+console.log(tch);
+for(const [team, odd] of tch){
+  const teamStr = team === 'x' ? 'draw' : `victory' ${game[team]}`;
+  console.log(`Odd of victory ${teamStr}: ${odd}`)
+}
 
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
