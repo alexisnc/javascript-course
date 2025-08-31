@@ -57,13 +57,13 @@ const arr = [1, 2, ...[3, 4]];
 
 //REST, bc on left side of =
 const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+//console.log(a, b, others);
 
 const [pizza, , risotto, ...otherFood] = [
   ...restaurant.mainMenu,
   ...restaurant.starterMenu,
 ];
-console.log(pizza, risotto, otherFood);
+//console.log(pizza, risotto, otherFood);
 
 //Objects
 const { sat, ...weekdays } = restaurant.openingHours;
@@ -213,70 +213,70 @@ restaurant.orderPizza('mushrooms');
 
 
 
-// Use ANy data type, return ANY data type. short-circuiting
-console.log(3 || 'Jonas');
-console.log('' || 'Jonas');
-console.log(true || 0);
-console.log(undefined || null);
+// // Use ANy data type, return ANY data type. short-circuiting
+// console.log(3 || 'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
 
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
-restaurant.numGuests = 23;
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1); 
+// restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1); 
 
-const guests2 = restaurant.numGuests || 10;
-console.log(guests2); 
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2); 
 
-console.log('--------AND-------')
+// console.log('--------AND-------')
 
-console.log(0 && 'Jonas')
-console.log(7 && 'Jonas')
+// console.log(0 && 'Jonas')
+// console.log(7 && 'Jonas')
 
-console.log('Hello' && 23 && null && 'jonas');
-
-
-//Nullish coalescene operator
-restaurant.numGuests = 0;
-const guests = restaurant.numGusets || 10;
-console.log(guests);
-
-//Null operator
-const guestCorrect = restaurant.numGuests ?? 10;
-console.log(guestCorrect);
-
-//Logical Assignment operators 
-
-const rest1 = {
- name: 'Capri',
- numGuests: 20,
-}
-
-const rest2 = {
- name: 'La Piazza', 
- owner: 'Giovanni Rossi',
-}
-
-//Or Assignment operator
-//rest1.numGusts = rest1.numGuests || 10;
-//rest2.numGuests = rest2.numGuests || 10;
-rest1.numGuests ||= 10;
-rest2.numGuests ||= 10;
-
-//nullish assignment operator (null or undefined)
-rest1.numGuests ??= 10;
-rest2.numGuests ??= 10;
-
-//AND assignment operator
-// rest2.owner = rest2.owner && '<ANONYMOUS>';
-// rest1.owner = rest1.owner && '<ANONYMOUS>';
-rest1.owner &&= '<ANONYMOUS>';
-rest2.owner &&= '<ANONYMOUS>'
-
-console.log(rest1);
-console.log(rest2);
+// console.log('Hello' && 23 && null && 'jonas');
 
 
+// //Nullish coalescene operator
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGusets || 10;
+// console.log(guests);
+
+// //Null operator
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
+
+// //Logical Assignment operators 
+
+// const rest1 = {
+//  name: 'Capri',
+//  numGuests: 20,
+// }
+
+// const rest2 = {
+//  name: 'La Piazza', 
+//  owner: 'Giovanni Rossi',
+// }
+
+// //Or Assignment operator
+// //rest1.numGusts = rest1.numGuests || 10;
+// //rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// //nullish assignment operator (null or undefined)
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+// //AND assignment operator
+// // rest2.owner = rest2.owner && '<ANONYMOUS>';
+// // rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest1.owner &&= '<ANONYMOUS>';
+// rest2.owner &&= '<ANONYMOUS>'
+
+// console.log(rest1);
+// console.log(rest2);
+
+//Challenge 1
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -319,34 +319,48 @@ const game = {
  },
  };
 
- //1.
-const [players1, players2] = game.players;
-console.log(players1, players2);
+//  //1.
+// const [players1, players2] = game.players;
+// console.log(players1, players2);
 
-//2.
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
+// //2.
+// const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
 
-//3.
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
+// //3.
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
 
-//4.
-const playersFinal = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+// //4.
+// const playersFinal = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 
 
-//5. 
-const {odds: {team1, x: draw, team2}} = game;
-console.log(team1, draw,team2);
+// //5. 
+// const {odds: {team1, x: draw, team2}} = game;
+// console.log(team1, draw,team2);
 
-//6.
-const printGoals = function(...players) {
-  console.log(`${players.length} goals were scored`);
-};
+// //6.
+// const printGoals = function(...players) {
+//   console.log(`${players.length} goals were scored`);
+// };
 
-printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
-printGoals('Davies', 'Muller');
-printGoals(...game.scored);
+// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+// printGoals('Davies', 'Muller');
+// printGoals(...game.scored);
 
-//7.
-team1 < team2 && console.log('Team 1 is more likely to win');
+// //7.
+// team1 < team2 && console.log('Team 1 is more likely to win');
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item); 
+
+for (const item of menu.entries()){
+  console.log(`${item[0] + 1}: ${item[1]}`);
+}
+
+for (const [i, el] of menu.entries()){
+  console.log(`${i + 1}: ${el}`);
+}
+
+//console.log([...menu.entries()]);
